@@ -1,7 +1,9 @@
 *** Settings ***
-Documentation       Sample Script
-Library             SeleniumLibrary
-Library             Dialogs
+Documentation   Sample Script
+Library         SeleniumLibrary
+Library         Dialogs
+Resource        ../Resources/PageSteps/CommonSteps.robot
+
 
 #Run the script:
 #python -m robot -d Results .\Tests\*.robot
@@ -13,18 +15,9 @@ Sample Webdriver
     [Documentation]         Sample Test - to open browser using WebDriverManager
     [Tags]                  WebDriverManager    Smoke
 
-    #Initialize Selenium
-    set selenium speed      .2s
-    set selenium timeout    10s
-
-    # Open Browser
-    log                     Open browser
-    Open Browser            https://automationplayground.com/crm       chrome
-
-    # Window Resize
-    log                     Window Resize and Reposition
-    set window position     x=1    y=1
-    set window size         width=1920   height=1080
+    [CommonSteps] Initialize Selenium
+    [CommonSteps] Open Browser and Navigate To Url
+    [CommonSteps] Set Browser Size and Position
 
     page should contain     Customers Are Priority
 
