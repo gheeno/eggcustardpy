@@ -42,7 +42,7 @@ Sample Webdriver
     click link              New Customer
     page should contain     Add Customer
 
-    input text              id=EmailAddress     sampleuser@test.com
+    input text              id=EmailAddress     sampleuser@test.com:
     input text              id=FirstName        Gheeno
     input text              id=LastName         Doe
     input text              id=City             Dallas
