@@ -8,7 +8,6 @@ Setup :
 - Install PyCharm </br>
 -- Install IntelliBot ( latest ) plugin.
 
-
 To Run : 
 - Run the script: </br>
 -- `~ python -m robot -d Results .\Tests\*.robot`
