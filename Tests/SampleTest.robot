@@ -2,17 +2,18 @@
 Documentation       [Feature] Sample CRM system.
 Library             SeleniumLibrary
 Library             Dialogs
-Resource            ../Resources/PageSteps/CommonSteps.robot
-Resource            ../Resources/PageSteps/CommonSteps.robot
+Resource            ../Resources/Helper/CommonSteps.robot
 Resource            ../Resources/PageObjects/SamplePageObject.robot
+Resource            ../Resources/Data/Data.robot
 Suite Setup         Inserting Test Data
 Test Setup          Initialize Webtest
 Test Teardown       Terminate Webtest
 Suite Teardown      Clean up Tets Data
 
 *** Variables ***
-${START_URL} =  https://automationplayground.com/crm
-${BROWSER} =    chrome
+${startUrl}     https://automationplayground.com/crm
+##${browser}      headlesschrome
+## check Data.Robot
 
 *** Test Cases ***
 Create a new user in the CRM System.

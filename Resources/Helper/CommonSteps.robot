@@ -1,5 +1,6 @@
 *** Settings ***
-Library                         SeleniumLibrary
+Library         SeleniumLibrary
+Resource        ../Data/Data.robot
 
 *** Keywords ***
 Inserting Test Data
@@ -14,7 +15,8 @@ Initialize Webtest
     [Documentation]             Sets selenium speed, opens a browser, and then resize.
     Set Selenium time
     #make this variable in the future.
-    open browser                about:blank    ${BROWSER}
+    log                         Browser : ${browser}
+    open browser                about:blank    ${browser}
     Set Browser Size and Position
 
 Terminate Webtest

@@ -8,7 +8,7 @@ Library         SeleniumLibrary
     #input text   (//input[@class='form-control'])[1]    makeThisAVariable
 
 User Opens the sample CRM page.
-    Go to                   ${START_URL}
+    Go to                   ${startUrl}
 
 User verifies that `Customer Are Priority` text is on the page.
     page should contain     Customers Are Priority
