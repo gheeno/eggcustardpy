@@ -14,7 +14,7 @@ Initialize Webtest
     [Documentation]             Sets selenium speed, opens a browser, and then resize.
     Set Selenium time
     #make this variable in the future.
-    open browser                about:blank    chrome
+    open browser                about:blank    ${BROWSER}
     Set Browser Size and Position
 
 Terminate Webtest

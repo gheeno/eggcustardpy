@@ -10,10 +10,9 @@ Test Setup          Initialize Webtest
 Test Teardown       Terminate Webtest
 Suite Teardown      Clean up Tets Data
 
-#Run the script:
-#python -m robot -d Results .\Tests\*.robot
 *** Variables ***
-
+${START_URL} =  https://automationplayground.com/crm
+${BROWSER} =    chrome
 
 *** Test Cases ***
 Create a new user in the CRM System.
