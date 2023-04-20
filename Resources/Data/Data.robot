@@ -3,7 +3,7 @@
 Documentation       [POJO] - Data Dump.
 
 *** Variables ***
-${startUrl}     https://2automationplayground.com/crm
-${browser}      chrome
+${START_URL}    https://2automationplayground.com/crm
+${BROWSER}      chrome
 
 *** Keywords ***

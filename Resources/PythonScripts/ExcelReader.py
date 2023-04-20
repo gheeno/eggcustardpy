@@ -1,24 +1,37 @@
 import pandas as pd
 import os
+import sys
 
-store_id = input("Enter StoreID: ")
-# store_id = 1
+# Variables #
+test_excel_name = "stores.xlsx"
 
-# Read Excel file
-excel_path = os.path.join("..", "", "Data", "")
-df = pd.read_excel(excel_path+"stores.xlsx", sheet_name="Sheet1")
+# Pass an argument in the CLI, in this case <argument_name>:<argument_value>.
+if len(sys.argv) > 1:
+        arg = sys.argv[1].split(":")[-1]
+        print(f"Selected Store : {arg}")
+        store_id = arg
+else:
+    print("No Store argument was passed")
+    exit()
 
-# Filter data by StoreID
+# Read Excel File
+excel_path = os.path.join(".", "", "Resources", "Data", "", test_excel_name)
+df = pd.read_excel(excel_path, sheet_name="Sheet1")
+
+# excel_path = os.path.join(".", "", "Resources", "Data", "", test_excel_name)
+# df = pd.read_excel(excel_path, sheet_name="Sheet1")
+
+# Filter Data by Column A's Store ID
 filtered_df = df[df["StoreID"] == int(store_id)]
 
-# Check if StoreID exists in the spreadsheet
+# Check if StoreID exits in the spreadsheet.
 if filtered_df.empty:
-    print(f"StoreID {store_id} does not exist.")
+    print(f"StoreID : {store_id} does not exist in the spreadsheet.")
+    exit()
 else:
-    # Get URL and DeviceSerialNumber
     url = filtered_df.iloc[0]["URL"]
     device_serial_number = filtered_df.iloc[0]["DeviceSerialNumber"]
-
-    # Print results
     print(f"URL: {url}")
-    print(f"DeviceSerialNumber: {device_serial_number}")
+    print(f"DSN: {device_serial_number}")
+
+exit()
